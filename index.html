@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,9 +7,12 @@
   <link rel="manifest" href="manifest.json"/>
   <link rel="icon" href="icon-192x192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="icon-512x512.png" sizes="512x512">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/style.css"/>
-  <meta name="theme-color" content="#4361ee"/>
+  <meta name="theme-color" content="#6366f1"/>
+  <meta name="description" content="Aplikace pro správu účtenek, barů a služeb pro Vila Praha Braník">
 </head>
 <body>
   <div class="app-wrapper">
@@ -57,7 +60,10 @@
     <main id="app" class="app-content"></main>
 
     <footer class="app-footer">
-      <small>© 2025 Vila Praha Braník – spravuje Martin</small>
+      <div class="footer-content">
+        <small>© 2025 Vila Praha Braník – spravuje Martin</small>
+        <div class="version">v2.0</div>
+      </div>
     </footer>
   </div>
   
@@ -69,6 +75,26 @@
   
   <div id="toast" class="toast"></div>
 
+  <!-- Bublinový efekt na pozadí -->
+  <div class="background-effects">
+    <div class="bubble bubble-1"></div>
+    <div class="bubble bubble-2"></div>
+    <div class="bubble bubble-3"></div>
+    <div class="bubble bubble-4"></div>
+  </div>
+
+  <!-- Načítací animace -->
+  <div id="loader" class="loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <div class="loader-text">Načítání...</div>
+    </div>
+  </div>
+
+  <!-- Skripty -->
   <script type="module" src="js/app.js"></script>
+  
+  <!-- Lazy load Chart.js pouze když je potřeba -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 </body>
 </html>
